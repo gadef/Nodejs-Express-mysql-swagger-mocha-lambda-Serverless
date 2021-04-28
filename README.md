@@ -33,3 +33,5 @@ Luego de ejecutar el swagger ingresar a la siguiente ruta para visualizar:
 ```bash
 http://<url>/docs
 ```
+
+#### * No olvide renombrar .env_example a .env
