@@ -1,0 +1,352 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/persona/": {
+      "get": {
+        "tags": [
+          "persona"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ejemplo de respuesta",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "status": {
+                  "type": "number",
+                  "example": 200
+                },
+                "body": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 3
+                      },
+                      "nombres": {
+                        "type": "string",
+                        "example": "Rimac"
+                      },
+                      "apellidos": {
+                        "type": "string",
+                        "example": "Perú"
+                      },
+                      "edad": {
+                        "type": "string",
+                        "example": "50"
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "persona"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "object",
+            "description": "Data persona",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nombres": {
+                  "type": "string",
+                  "example": "Erick"
+                },
+                "apellidos": {
+                  "type": "string",
+                  "example": "García"
+                },
+                "edad": {
+                  "type": "number",
+                  "example": 29
+                }
+              },
+              "required": [
+                "nombres",
+                "apellidos",
+                "edad"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ejemplo de respuesta",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "status": {
+                  "type": "number",
+                  "example": 200
+                },
+                "body": {
+                  "type": "object",
+                  "properties": {
+                    "fieldCount": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "affectedRows": {
+                      "type": "number",
+                      "example": 1
+                    },
+                    "insertId": {
+                      "type": "number",
+                      "example": 3
+                    },
+                    "serverStatus": {
+                      "type": "number",
+                      "example": 2
+                    },
+                    "warningCount": {
+                      "type": "number",
+                      "example": 0
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "protocol41": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "changedRows": {
+                      "type": "number",
+                      "example": 0
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persona/{id}": {
+      "get": {
+        "tags": [
+          "persona"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Persona ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ejemplo de respuesta",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "status": {
+                  "type": "number",
+                  "example": 200
+                },
+                "body": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number",
+                        "example": 1
+                      },
+                      "nombres": {
+                        "type": "string",
+                        "example": "Erick"
+                      },
+                      "apellidos": {
+                        "type": "string",
+                        "example": "García"
+                      },
+                      "edad": {
+                        "type": "string",
+                        "example": "29"
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/swapi/": {
+      "get": {
+        "tags": [
+          "swapi"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ejemplo de respuesta",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "status": {
+                  "type": "number",
+                  "example": 200
+                },
+                "body": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nombre": {
+                        "type": "string",
+                        "example": "Luke Skywalker"
+                      },
+                      "altura": {
+                        "type": "string",
+                        "example": "172"
+                      },
+                      "masa": {
+                        "type": "string",
+                        "example": "77"
+                      },
+                      "color_de_pelo": {
+                        "type": "string",
+                        "example": "blond"
+                      },
+                      "color_de_piel": {
+                        "type": "string",
+                        "example": "fair"
+                      },
+                      "color_de_los_ojos": {
+                        "type": "string",
+                        "example": "blue"
+                      },
+                      "Ano_de_nacimiento": {
+                        "type": "string",
+                        "example": "19BBY"
+                      },
+                      "genero": {
+                        "type": "string",
+                        "example": "male"
+                      },
+                      "mundo_natal": {
+                        "type": "string",
+                        "example": "http://swapi.dev/api/planets/1/"
+                      },
+                      "Pelicula": {
+                        "type": "array",
+                        "example": [
+                          "http://swapi.dev/api/films/1/",
+                          "http://swapi.dev/api/films/2/",
+                          "http://swapi.dev/api/films/3/",
+                          "http://swapi.dev/api/films/6/"
+                        ],
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "especies": {
+                        "type": "array",
+                        "example": [],
+                        "items": {}
+                      },
+                      "vehiculos": {
+                        "type": "array",
+                        "example": [
+                          "http://swapi.dev/api/vehicles/14/",
+                          "http://swapi.dev/api/vehicles/30/"
+                        ],
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "naves_estelares": {
+                        "type": "array",
+                        "example": [
+                          "http://swapi.dev/api/starships/12/",
+                          "http://swapi.dev/api/starships/22/"
+                        ],
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "creado": {
+                        "type": "string",
+                        "example": "2014-12-09T13:50:51.644000Z"
+                      },
+                      "editado": {
+                        "type": "string",
+                        "example": "2014-12-20T21:17:56.891000Z"
+                      },
+                      "url": {
+                        "type": "string",
+                        "example": "http://swapi.dev/api/people/1/"
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
